@@ -8,4 +8,4 @@ Used dependencies:
 - Bootstrap 4
 - fontawesome
 
-final build [live] (http://tzawada.pl/drukarnia)
+final build [live](http://tzawada.pl/drukarnia)
