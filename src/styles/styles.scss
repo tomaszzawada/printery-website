@@ -1,0 +1,587 @@
+@import "~bootstrap/scss/bootstrap";
+$fa-font-path:"~@fortawesome/fontawesome-free/webfonts/";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import '~@fortawesome/fontawesome-free/scss/solid.scss';
+@import '~@fortawesome/fontawesome-free/scss/regular.scss';
+@import '~@fortawesome/fontawesome-free/scss/brands.scss';
+
+
+$secondary-color: rgb(148, 200, 61);
+$light-color: rgb(255, 255, 255);
+$dark-color: rgb(69, 72, 72);
+$dark-gray: #666666;
+$light-gray: #e5e5e5;
+
+html {
+    overflow-x: hidden;
+}
+body {
+    position: relative;
+    background-color: $light-color;
+    font-family: Lato, Calibri, sans-serif, Arial, Helvetica;
+    // color: $dark-gray;
+    font-weight: 300;
+    font-size: 14px;
+    overflow: hidden;
+}
+
+ul {
+    padding-left:6px;
+    li{
+        font-size: 1.25em;
+    }
+}
+
+h1 {
+    font-size: 2.2em;
+}
+h2 {
+    font-size: 1.8em;
+}
+h3 {
+    font-size: 1.6em;
+}
+h4 {
+    font-size: 1.45em;
+}
+h5 {
+    font-size: 1.15em;
+}
+h6 {
+    font-size: 1em;
+}
+.display-1 {
+    font-size: 5em;
+}
+.display-2 {
+    font-size: 4em;
+}
+.display-3 {
+    font-size: 3.5em;
+}
+.display-4 {
+    font-size: 2em;
+    font-weight: 400;
+}
+
+.lead {
+    font-size: 1.25em;
+}
+
+a{
+    color: #212529;
+    &:hover, &:active, &:focus, &:visited {
+        color: darken(#212529,100%);
+    }
+}
+
+// NAVBAR
+.hamburger-button {
+    background-color: $light-color;
+}
+
+.navbar{
+    background: $light-color;
+    transition: .2s;
+    .nav-link{
+        text-align: center;
+        font-size: 0.875rem;
+        font-weight: 400;
+        text-transform: uppercase;
+        padding: 0.5em 0.5em !important;
+        }
+}
+
+.navbar-light .navbar-nav .nav-link {
+    background-color: $light-color;
+    color: #808080;
+    &:hover{
+        color: $secondary-color; 
+    }
+    &.active {
+        color: $secondary-color;
+    }
+}
+
+//navbar animation
+.nav-link {
+    &::after {
+      content: '';
+      display: block;
+      width: 0;
+      height: 2px;
+      background: lighten($secondary-color, 30%);
+    }
+    &:hover::after{
+        margin-left: 35%;
+        width: 30%;
+        transition: width .5s;
+    }
+  }
+  
+  .nav-link.active {
+    &::after {
+      content: '';
+      display: block;
+      margin-left: 35%;
+      width: 30%;
+      height: 2px;
+      background: $secondary-color;
+      transition: width .5s;
+    }
+  }
+
+//nav fixed
+.navbar-brand > img{
+    transition: .2s;
+}
+// HIDE MENU ON SCROLL DOWN
+.nav-up {
+    top: -129px;
+  }
+
+// Sldier
+#slider{
+    margin-top: 126px;
+}
+.carousel-inner{
+    background-color: $light-color;
+}
+.carousel-item {
+    height: calc(100vh - 126px);
+}
+.carousel-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.carousel-image-1 {
+    background-position: center center;
+    background-image: url("../img/dron/ndron1.jpg");
+}
+.carousel-image-2 {
+    background-position: 30% top;
+    background-image: url("../img/dron/ndron3.jpg");
+}
+.carousel-image-3 {
+    background-position: center top;
+    background-image: url("../img/dron/ndron5.jpg");
+}
+
+.carousel-caption {
+    top: 50%;
+    left: 10%;
+    right: 0;
+}
+
+#slider .carousel-caption {
+    h3 {
+        margin-bottom: 0;
+        >span.h3-caption{
+            padding: .5rem 1rem;
+        }
+    }
+    span {
+        display: inline-block;
+        line-height: 1.2em;
+        color: $light-color;
+        background-color:rgba($secondary-color, .85);
+        &.p-caption{
+            padding: .5rem 1rem;
+            background-color: rgba(151,151,151, .9);
+            color: $light-color;
+            font-weight: 400;
+        }
+    }
+}
+#slider .btn-success {
+    color: $light-color;
+    background-color: rgba($secondary-color, .85);
+    border-color: rgba($secondary-color, 0);
+}
+
+.carousel-image::after {
+        content: "";
+        background-color: rgba(0,0,0, 0.5);
+        // background-image: url("../img/filtr.png");
+        opacity: .5;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+// Nieruchomosc
+#nieruchomosc-header {
+    text-align: center;
+    background: darken($secondary-color, 4%);
+    color: $light-color;
+    
+}
+#nieruchomosc {
+    background-color: $light-color;
+}
+
+// LIST
+#nieruchomosc ul, #lokalizacja ul {
+    list-style: none;
+    > li {
+        padding-bottom:14px;
+        > i {
+            color: $secondary-color;
+            margin-right: 10px;
+        }
+    }
+}
+
+// CARD SECTION
+.btn-lg {
+    font-size: 1rem;
+}
+
+.bg-cena {
+    background: $secondary-color;
+}
+
+.btn-outline-dark:hover {
+    color: #fff;
+    background-color:$secondary-color;
+    border-color:$secondary-color;
+}
+
+// Video
+video {
+    padding: 24px;
+    width: 100%;
+    height: auto;
+}
+
+// GALERIA 
+#galeria, #lokalizacja, #lokalizacja-header, #kontakt, #kontakt-header{
+    background-color: $light-color; 
+}
+#galeria .row {
+    margin-bottom: 20px;
+}
+
+.owl-item > a > div {
+    display: block;
+    height: 360px;
+    width: auto;
+    background-size: cover;
+    background-position: center center;
+  }
+  
+  .owl-carousel .owl-nav > button {
+    position: absolute;
+    top: 50%;
+    z-index: 99;
+    height: 60px;
+    width: 40px;
+    &.owl-prev{
+      left: 0px;
+      &:hover{
+        color: #000;
+        background: none;
+      }
+      i {
+        color: $light-color;
+        transform: scale(2);
+      }
+    }
+    &.owl-next{
+      right: 0px;
+      &:hover{
+        color: #000;
+        background:none;
+      }
+      i {
+        color: $light-color;
+        transform: scale(2);
+      }
+    }
+  }
+
+  .owl-dots {
+      display: flex;
+      position: absolute;
+      background-color: rgba($dark-color, 0.4);
+      border-radius: 4px;
+      left: 50%;
+      bottom: 4%;
+      z-index: 99;
+      margin-left: -108px;
+      .owl-dot span {
+        background-color: $light-color;
+        width: 10px;
+        height: 10px;
+        margin: 5px 7px;
+        display: block;
+        transition: opacity .2s ease;
+        border-radius: 30px;
+      }
+  }
+  .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: $secondary-color;
+}
+
+// Modal lightbox
+  .ekko-lightbox{
+    align-items: start;
+  }
+  .modal-header{
+    padding:4px;
+  }
+  .modal-footer, .modal-title {
+    color: #000;
+  }
+  .modal-content {
+    border: none;
+    border-radius: 0;
+  }
+  .ekko-lightbox .modal-dialog {
+    flex: 100%!important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .ekko-lightbox-nav-overlay > a {
+      color: $light-color;
+  }
+
+//LOKALIZACJA
+h3.line-bottom {
+    margin-bottom: 0.75em;
+}
+
+// MAP
+#map{
+    border-top: 2px solid $secondary-color;
+    border-bottom: 2px solid $secondary-color;
+    width: 100%;
+    height: 450px;
+}
+
+// Kontakt
+#kontakt i {
+    transform: scale(2.2);
+    color: lighten(#000000,  20%);
+    margin-bottom: 1.75em;
+}
+
+// Under/Above Lines
+.line-top {
+    position: relative;
+    margin-bottom: 2em;
+    &::before {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        height: 3px;
+        width: 100px;
+        background-color: lighten($secondary-color, 5%);
+        margin-left: -50px;
+    }
+
+}
+.line-bottom {
+    position: relative;
+    margin-bottom: 1.5em;
+    &::after {
+        content: '';
+        display: inline-block;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        height: 3px;
+        width: 100px;
+        background-color: lighten($secondary-color, 5%);
+        margin-left: -50px;
+    }
+}
+
+//PRELOADER
+.preloader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+    background:url("../img/logorej.png"), url("../img/preloader4.gif");
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center, 50% 75%;
+}
+
+//FACEBOOK FIXED
+.facebook-fixed{
+    position: fixed;
+    right: 0;
+    bottom: 20%;
+    z-index: 60;
+   }
+
+// FOOTER
+footer {
+    padding: 10px;
+    color: $light-color;
+    background-color: #333; 
+    p {
+        font-size: 0.75rem
+    }
+}
+
+.fixed-border {
+    border-bottom: 1px solid $light-gray;
+}
+
+// MEDIA QUERIES 
+@media (min-width: 576px) {
+    ul {
+        padding-left: 20px;
+    }
+    .display-4 {
+        font-size: 3em;
+    }
+    .owl-dots {
+        margin-left: -36px;
+    }
+    #nieruchomosc .card {
+        width: 85%;
+        z-index: 50;
+        .card-body {
+            padding: 1.25rem;
+        }
+    } 
+ }
+// MD
+ @media (min-width: 768px) {
+    #navbarCollapse > ul {
+        border: none;
+    }
+    .navbar{
+        background: rgba(255, 255, 255, 1); 
+
+        .nav-link {
+            padding: 1.33em 0.5em !important;
+        }
+    }
+    #slider .carousel-caption {
+        h3 {
+            margin-bottom: 0;
+            >span.h3-caption{
+                padding: 0 1.25rem;
+            }
+        }
+        span {
+            display: inline-block;
+            line-height: 2em;
+            &.p-caption{
+                padding: .5rem 1.25rem;
+            }
+        }
+    }
+
+    // navbar animation on full menu
+    .nav-link {
+        &::after {
+          content: '';
+          display: block;
+          width: 0;
+          height: 2px;
+          background: lighten($secondary-color, 30%);
+        }
+        &:hover::after{
+            margin-left: 0;
+            width: 100%;
+            transition: width .5s;
+        }
+      }
+      
+      .nav-link.active {
+        &::after {
+          content: '';
+          display: block;
+          margin-left: 0;
+          width: 100%;
+          height: 2px;
+          background: $secondary-color;
+          transition: width .5s;
+        }
+      }
+ }
+
+// Large devices (desktops, 62em and up)
+@media (min-width: 992px) {
+	html,
+	body {
+        font-size: 16px;
+
+        h1 {
+            font-size: 3em;
+        }
+        h2 {
+            font-size: 2.5em;
+        }
+        h3 {
+            font-size: 2.2em;
+        }
+        h4 {
+            font-size: 1.5em;
+        }
+
+        h5 {
+            font-size: 1.25em;
+        }
+        h6 {
+            font-size: 1em;
+        }
+        .display-1 {
+            font-size: 6em;
+        }
+        .display-2 {
+            font-size: 5.5em;
+        }
+        .display-3 {
+            font-size: 4.5em;
+        }
+        .display-4 {
+            font-size: 3.5em;
+        }
+        .lead {
+            font-size: 1.25em;
+        }
+    }
+
+    .navbar {
+        .nav-link{
+            font-size: 1rem;
+            padding-left: 1em !important;
+            padding-right: 1em !important;
+        }
+    }
+    h4{
+        &.display-4{
+            font-size: 2.5em;
+        }
+    }
+    .btn-lg {
+        font-size: 1.25rem;
+    }
+
+    .preloader {
+        background-position: center, 50% 80%;
+     }
+}
+
+
+@media (min-width: 1500px) {
+    #nieruchomosc .card {
+        width: 44%;
+    }
+    .preloader {
+       background-position: center, 50% 65%;
+    }
+}
